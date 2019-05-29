@@ -3,13 +3,10 @@
 window.addEventListener('load', function() {
     var ciudad;
     var ubicaciones = [];
-    console.log("dom cargado");
 
     var boton = document.querySelector("#buscar");
     boton.addEventListener('click', function() {
         ciudad = document.querySelector("#dato").value;
-        console.log('tocaste el boton');
-        console.log(ciudad);
         $.ajax({
             url: 'https://developers.zomato.com/api/v2.1/locations?query=' + ciudad,
             headers: {
@@ -23,7 +20,6 @@ window.addEventListener('load', function() {
                 localStorage.setItem(ciudad, ciudad);
 
                 window.location.href = 'resultados.html';
-                console.log('se enviaron los datos');
             }
         });
     })
@@ -45,7 +41,6 @@ window.addEventListener('load', function() {
     var limpiar = document.querySelector("#limpiar");
     limpiar.addEventListener('click', function() {
         localStorage.clear();
-        console.log("tocando");
         window.location.reload();
     });
 });
