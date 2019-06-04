@@ -7,6 +7,7 @@ window.addEventListener('load', function() {
     var boton = document.querySelector("#buscar");
     boton.addEventListener('click', function() {
         ciudad = document.querySelector("#dato").value;
+        ciudad = ciudad.toLowerCase();
         $.ajax({
             url: 'https://developers.zomato.com/api/v2.1/locations?query=' + ciudad,
             headers: {

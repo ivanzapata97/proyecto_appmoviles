@@ -11,6 +11,7 @@ window.addEventListener('load', function() {
 
     buscar.addEventListener('click', function() {
         var ciudad = document.querySelector("#dato").value;
+        ciudad = ciudad.toLowerCase();
 
         formulario.style.display = 'none';
         document.querySelector("#texto-resultado").style.display = 'inline';

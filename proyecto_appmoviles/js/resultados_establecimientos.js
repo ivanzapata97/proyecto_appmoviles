@@ -11,6 +11,7 @@ window.addEventListener('load', function() {
 
     buscar.addEventListener('click', function() {
         var decision = document.querySelector("#decision").value;
+        decision = decision.toLowerCase();
         document.querySelector("#texto-resultado").style.display = 'inline';
         document.querySelector("#formulario").style.display = 'none';
         if (decision == "random") {
